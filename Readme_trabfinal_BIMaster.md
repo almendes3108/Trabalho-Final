@@ -22,7 +22,7 @@ Para a consulta , extração e tratamento dos dados, usamos as seguintes ferrame
 
 ### **Bibliotecas**
 
-	As bibliotecas listadas abaixo foram importadas para possibilitar a extração, tratamento e  análise dos dados, além do treinamento de modelos.
+As bibliotecas listadas abaixo foram importadas para possibilitar a extração, tratamento e  análise dos dados, além do treinamento de modelos.
 
     import tweepy
     import numpy as np
@@ -60,7 +60,7 @@ Para realizar a extração dos dados para este estudo, usamos a biblioteca do Py
  Para acessar a API do Twitter , primeiramente precisamos criar/ter uma conta no Twitter em seu site de desenvolvimento, [Twitter Developers](https://developer.twitter.com/en/portal/dashboard).
 
 
-![Site de Chaves do Twitter](C:\Users\furnas.DESKTOP-H7LG5SA\OneDrive - furnas.com.br\Documentos\CURSOS\Pos_PUC_BIMASTER\Turmas_BiMaster\Trabalho Final\Readme\token.png)
+![Site de Chaves do Twitter](https://github.com/almendes3108/Trabalho-Final/blob/main/token.png)
 
 
 E através do comando abaixo, conseguimos a autenticação necessária para acessar a API do Twitter :
@@ -80,4 +80,4 @@ OBS: O código acima permite que tenhamos um limite de 2000 linhas retornadas.
 
 	Com o apoio da biblioteca Pandas, extraímos os textos e importamos em um dataframe contendo inicialmente as colunas ID e texto.
 
-! [Exemplo de Dataframe](C:\Users\furnas.DESKTOP-H7LG5SA\OneDrive - furnas.com.br\Documentos\CURSOS\Pos_PUC_BIMASTER\Turmas_BiMaster\Trabalho Final\Readme\dataframe.png)
+! [Exemplo de Dataframe](https://github.com/almendes3108/Trabalho-Final/blob/main/dataframe.png)
