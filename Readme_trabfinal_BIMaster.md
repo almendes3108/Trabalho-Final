@@ -80,4 +80,4 @@ OBS: O código acima permite que tenhamos um limite de 2000 linhas retornadas.
 
 	Com o apoio da biblioteca Pandas, extraímos os textos e importamos em um dataframe contendo inicialmente as colunas ID e texto.
 
-! [Exemplo de Dataframe](https://github.com/almendes3108/Trabalho-Final/blob/main/dataframe.png)
+![Exemplo de Dataframe](https://github.com/almendes3108/Trabalho-Final/blob/main/dataframe.png)
