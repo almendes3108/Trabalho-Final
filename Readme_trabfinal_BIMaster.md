@@ -131,43 +131,63 @@ Resumidamente, é como se você estivesse contando a frequência com que cada pa
 
 O primeiro modelo usado foi o algoritmo Multinomial Naive Bayes que é um algoritmo de aprendizado de máquina utilizado em problemas de classificação de texto ou documentos que envolvem mais de 2 categorias. 
 
-    vectorizer = CountVectorizer(analyzer = "word")
-    freq_comentarios = vectorizer.fit_transform(comentarios)
-    modelo = MultinomialNB()
-    modelo.fit(freq_comentarios, classes)
+Todos os modelos obtiveram a separação de datasets em treinamento (80%) e em teste (20%).
 
-Onde os comentários são arrays extraídos de valores do campo “text” e as classes são arrays extraídos de valores do campo “rótulos”.
-
-O segundo modelo foi o algoritmo Multnomial usando Bigrams para tentar obter resultados mais precisos nos resultados de classificação.
-
-    #usando melhoria com Bigrams
-    vectorizer = CountVectorizer(ngram_range = (1, 2))
-    freq_comentarios = vectorizer.fit_transform(comentarios)
-
-    modelo = MultinomialNB()
-    modelo.fit(freq_comentarios, classes)
-
-O terceiro modelo foi o Random Forest, este algoritmo cria várias árvores de decisão aleatórias a partir de subconjuntos aleatórios do conjunto de dados original, criando, assim, uma floresta de árvores. 
+    X_train_mnb, X_test_mnb, y_train_mnb, y_test_mnb = train_test_split(df2['text'], df2['rotulos'], test_size=0.2)
 
     vectorizer = CountVectorizer(analyzer = "word", tokenizer = None, preprocessor = None,stop_words = stop_words, max_features = 5000)
 
-    train_data_features = vectorizer.fit_transform(comentarios)
-    train_data_features
+    X_train_vectors = vectorizer.fit_transform(X_train_mnb)
+    X_test_vectors = vectorizer.transform(X_test_mnb)
+
+    mnb = MultinomialNB()
+    mnb.fit(X_train_vectors, y_train_mnb)
+
+    y_pred_mnb = mnb.predict(X_test_mnb_vectors)
+
+
+O segundo modelo foi o algoritmo Multnomial usando Bigrams para tentar obter resultados mais precisos nos resultados de classificação.
+
+    X_train_mnb2, X_test_mnb2, y_train_mnb2, y_test_mnb2 = train_test_split(df2['text'], df2['rotulos'], test_size=0.2)
+    vectorizer = CountVectorizer(ngram_range = (1, 2),analyzer = "word", tokenizer = None, preprocessor = None,stop_words = stop_words, max_features = 5000)
+
+    X_train_mnb2_vectors = vectorizer.fit_transform(X_train_mnb2)
+    X_test_mnb2_vectors = vectorizer.transform(X_test_mnb2)
+
+    modelo = MultinomialNB()
+    modelo.fit(X_train_mnb2_vectors, y_train_mnb2)
+
+    y_pred_mnb2 = modelo.predict(X_test_mnb2_vectors)
+
+O terceiro modelo foi o Random Forest, este algoritmo cria várias árvores de decisão aleatórias a partir de subconjuntos aleatórios do conjunto de dados original, criando, assim, uma floresta de árvores. 
+
+    X_train_rf, X_test_rf, y_train_rf, y_test_rf = train_test_split(df2['text'], df2['rotulos'], test_size=0.2)
+
+    vectorizer = CountVectorizer(analyzer = "word", tokenizer = None, preprocessor = None,stop_words = stop_words, max_features = 5000)
+
+    train_data_features = vectorizer.fit_transform(X_train_rf)
 
     forest = RandomForestClassifier(n_estimators = 100)
-    forest
+    class_sentimentos = y_train_rf.values
+
+    forest = forest.fit(train_data_features, class_sentimentos)
+
+    test_data_features_resultados = vectorizer.transform(X_test_rf)
+    resultados = forest.predict(test_data_features_resultados)
+
 
 
 O quarto modelo é o Support Vector Model (SVM) é um algoritmo de aprendizado de máquina supervisionado que pode ser usado para desafios de classificação ou regressão.
 
-    X_train, X_test, y_train, y_test = train_test_split(df2['text'], df2['rotulos'], test_size=0.2)
+    X_train_svm, X_test_svm, y_train_svm, y_test_svm = train_test_split(df2['text'], df2['rotulos'], test_size=0.2)
 
-    vectorizer = TfidfVectorizer( max_features=5000)
+    vectorizer = CountVectorizer(analyzer = "word", tokenizer = None, preprocessor = None,stop_words = stop_words, max_features = 5000)
 
-    X_train_vectors = vectorizer.fit_transform(X_train)
-    X_test_vectors = vectorizer.transform(X_test)
+    X_train_svm_vectors = vectorizer.fit_transform(X_train_svm)
+    X_test_svm_vectors = vectorizer.transform(X_test_svm)
     svm = SVC(kernel='linear')
-    svm.fit(X_train_vectors, y_train)
+    svm.fit(X_train_svm_vectors, y_train_svm)
+
 
 
 ### **Resultados**
@@ -178,25 +198,25 @@ Abaixo, são apresentados as matrizes e os valores de acurácia de cada um dos m
 
 ![multinomial](https://github.com/almendes3108/Trabalho-Final/blob/main/matriz_multinomial.png)
 
-Acurácia: 0,9245
+Acurácia: 0,9375
 
 2)	Multinomial usando Bigrams
 
 ![multinomialbigrams](https://github.com/almendes3108/Trabalho-Final/blob/main/matriz_multinomial_bigram.png)
 
-Acurácia: 0,893
+Acurácia: 0,915
 
 3)	Random Forest
 
 ![randomforest](https://github.com/almendes3108/Trabalho-Final/blob/main/matriz_Randomforest.png)
 
-Acurácia: 1,0
+Acurácia: 0,9675
 
 4)	SVM
 
 ![svm](https://github.com/almendes3108/Trabalho-Final/blob/main/matriz_svm.png)
 
-Acurácia: 0,965
+Acurácia: 0,9425
 
 
 
@@ -205,6 +225,4 @@ Acurácia: 0,965
 Após o treinamento dos 4 modelos de classificação de textos, o algoritmo Random Forest foi o que se mostrou mais eficaz tendo uma acurácia superior aos demais algoritmos apresentados nesse estudo. 
 
 Esse trabalho foi concebido através de muitos conhecimentos adquiridos do Curso de Pós-Graduação Business Intelligence Master usando conceitos de Python adquiridos nos módulos de Sistemas de Apoio à Decisão, conceitos de Localização e Uso de Informação e muitas atividades envolvidas em módulos de Processamento de Linguagem Natural e DataMining.
-
-
 
