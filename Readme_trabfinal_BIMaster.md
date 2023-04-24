@@ -60,7 +60,7 @@ Para realizar a extração dos dados para este estudo, usamos a biblioteca do Py
  Para acessar a API do Twitter , primeiramente precisamos criar/ter uma conta no Twitter em seu site de desenvolvimento, [Twitter Developers](https://developer.twitter.com/en/portal/dashboard).
 
 
-![Site de Chaves do Twitter](https://github.com/almendes3108/Trabalho-Final/tree/pictures/token.png)
+![Site de Chaves do Twitter](https://github.com/almendes3108/Trabalho-Final/blob/pictures/token.png)
 
 
 E através do comando abaixo, conseguimos a autenticação necessária para acessar a API do Twitter :
@@ -80,7 +80,7 @@ OBS: O código acima permite que tenhamos um limite de 2000 linhas retornadas.
 
 Com o apoio da biblioteca Pandas, extraímos os textos e importamos em um dataframe contendo inicialmente as colunas ID e texto.
 
-![Exemplo de Dataframe](https://github.com/almendes3108/Trabalho-Final/tree/pictures/dataframe.png)
+![Exemplo de Dataframe](https://github.com/almendes3108/Trabalho-Final/blob/pictures/dataframe.png)
 
 
 ### **Tratamento dos dados**
@@ -99,7 +99,7 @@ O  resultado da análise foi extraído após a criação de uma função denomin
         score = sia.polarity_scores(texto)
         return score['compound']
 
-![Dataframe_head](https://github.com/almendes3108/Trabalho-Final/tree/pictures/dfhead.png)
+![Dataframe_head](https://github.com/almendes3108/Trabalho-Final/blob/pictures/dfhead.png)
 
 Como o resultado é numérico, precisou-se rotular os dados para uma saída categórica:
 
@@ -116,7 +116,7 @@ Como o resultado é numérico, precisou-se rotular os dados para uma saída cate
 
 Onde: valores maiores que zero atribuímos no rótulo o valor “positivo”, valores menores que zero atribuímos no rótulo o valor “negativo” e valores iguais que zero atribuímos no rótulo o valor “neutro”
 
-![Dataframe_rotulos](https://github.com/almendes3108/Trabalho-Final/tree/pictures/df_com_rotulo.png)
+![Dataframe_rotulos](https://github.com/almendes3108/Trabalho-Final/blob/pictures/df_com_rotulo.png)
 
 
 ### **Nuvem de palavras**
@@ -124,7 +124,7 @@ Onde: valores maiores que zero atribuímos no rótulo o valor “positivo”, va
 Wordcloud – em português, nuvem de palavras ou nuvem de tags – é um tipo de visualização de dados muito poderoso e ferramenta de Data Science usado quando estamos trabalhando com textos, documentos, pesquisas, entre outras.
 Resumidamente, é como se você estivesse contando a frequência com que cada palavra aparece em um texto. Com essa frequência, você define tamanhos proporcionais às palavras, dispondo-as, também, em ângulos diferentes.
 
-![Wordcloud](https://github.com/almendes3108/Trabalho-Final/tree/pictures/workcloud.png)
+![Wordcloud](https://github.com/almendes3108/Trabalho-Final/blob/pictures/workcloud.png)
 
 
 ### **Treinamento de modelos**
@@ -193,25 +193,25 @@ Abaixo, são apresentados as matrizes e os valores de acurácia de cada um dos m
 
 1)	Multinomial Naive Bayes
 
-![multinomial](https://github.com/almendes3108/Trabalho-Final/tree/pictures/matriz_multinomial.png)
+![multinomial](https://github.com/almendes3108/Trabalho-Final/blob/pictures/matriz_multinomial.png)
 
 Acurácia: 0,92
 
 2)	Multinomial usando Bigrams
 
-![multinomialbigrams](https://github.com/almendes3108/Trabalho-Final/tree/pictures/matriz_multinomial_bigram.png)
+![multinomialbigrams](https://github.com/almendes3108/Trabalho-Final/blob/pictures/matriz_multinomial_bigram.png)
 
 Acurácia: 0,9075
 
 3)	Random Forest
 
-![randomforest](https://github.com/almendes3108/Trabalho-Final/tree/pictures/matriz_Randomforest.png)
+![randomforest](https://github.com/almendes3108/Trabalho-Final/blob/pictures/matriz_Randomforest.png)
 
 Acurácia: 0,9825
 
 4)	SVM
 
-![svm](https://github.com/almendes3108/Trabalho-Final/tree/pictures/matriz_svm.png)
+![svm](https://github.com/almendes3108/Trabalho-Final/blob/pictures/matriz_svm.png)
 
 Acurácia: 0,9875
 
