@@ -11,6 +11,8 @@
 
 A extração de dados do Twitter pode ser uma ferramenta valiosa para as empresas públicas que buscam compreender melhor o sentimento e as necessidades dos cidadãos. Com bilhões de tweets sendo publicados diariamente, o Twitter oferece uma riqueza de informações que as empresas públicas podem usar para melhorar a visão e o objetivo da empresa para a sociedade.
 No caso da Eletrobrás, a extração de dados do Twitter pode ser uma ferramenta de apoio importante permitindo que a empresa compreenda melhor a opinião pública sobre a sua atuação no setor de energia e avalie a efetividade de suas estratégias de comunicação, além de se manter atualizada sobre as tendências do setor de energia.
+A Interface de Programação de Aplicação (API) do Twitter é um conjunto de ferramentas e interfaces de programação que permitem que desenvolvedores criem aplicativos que se integram com a plataforma do Twitter. Ao longo do tempo, a API do Twitter passou por várias mudanças de contexto que afetaram os recursos disponíveis para os desenvolvedores e a forma como esses recursos podem ser acessados.
+
 
 
 ### **Ferramentas utilizadas**
@@ -219,7 +221,10 @@ Acurácia: 0,9875
 
 ### **Conclusão**
 
-Após o treinamento dos 4 modelos de classificação de textos, o algoritmo Support Vector Machine (SVM) foi o que se mostrou mais eficaz tendo uma acurácia superior aos demais algoritmos apresentados nesse estudo.  
+Após o treinamento dos 4 modelos de classificação de textos, o algoritmo Support Vector Machine (SVM) foi o que se mostrou mais eficaz tendo uma acurácia superior aos demais algoritmos apresentados nesse estudo.
+
+As maiores dificuldades no projeto foram relacionadas à extração da base de dados em que as mudanças de contexto da API do Twitter tiveram que ser satisfeitas, tais como mudanças de autenticação, restrição de acesso limitando númeto de solicitações e determinados recursos e mudança de estrutura dos dados da API ao longo do tempo. Por isso, o apoio de minha orientadora e a [documentação de API do Twitter](https://developer.twitter.com/en/docs/twitter-api/tools-and-libraries/v2) foram fundamentais para a evolução do projeto.
+
 
 Esse trabalho foi concebido através de muitos conhecimentos adquiridos do Curso de Pós-Graduação Business Intelligence Master usando conceitos de Python adquiridos nos módulos de Sistemas de Apoio à Decisão, conceitos de Localização e Uso de Informação e muitas atividades envolvidas em módulos de Processamento de Linguagem Natural e DataMining.
 
