@@ -227,5 +227,7 @@ Após o treinamento dos 4 modelos de classificação de textos, o algoritmo Supp
 
 As maiores dificuldades no projeto foram relacionadas à extração da base de dados em que as mudanças de contexto da API do Twitter tiveram que ser satisfeitas, tais como mudanças de autenticação, restrição de acesso limitando número de solicitações e determinados recursos e mudança de estrutura dos dados da API ao longo do tempo o que provocou mudanças nos modos de autenticação, contextos, parâmetros e chamadas a variáveis. Por isso, o apoio e experiência de minha orientadora e a consulta profunda da [documentação de API do Twitter](https://developer.twitter.com/en/docs/twitter-api/tools-and-libraries/v2) foram fundamentais para a evolução do projeto.
 
+Resumidamente, as mudanças de contexto na API do Twitter são uma parte natural da evolução da plataforma e da tecnologia subjacente. Essas alterações nos alertam que os desenvolvedores precisam estar cientes dessas mudanças e atualizar seus aplicativos em conformidade para garantir que seus aplicativos continuem funcionando corretamente e de acordo com as políticas do Twitter.
+
 Esse trabalho foi concebido através de muitos conhecimentos adquiridos do Curso de Pós-Graduação Business Intelligence Master usando conceitos de Python adquiridos nos módulos de Sistemas de Apoio à Decisão, conceitos de Localização e Uso de Informação e muitas atividades envolvidas em módulos de Processamento de Linguagem Natural e DataMining.
 
