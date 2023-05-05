@@ -11,6 +11,7 @@
 
 A extração de dados do Twitter pode ser uma ferramenta valiosa para as empresas públicas que buscam compreender melhor o sentimento e as necessidades dos cidadãos. Com bilhões de tweets sendo publicados diariamente, o Twitter oferece uma riqueza de informações que as empresas públicas podem usar para melhorar a visão e o objetivo da empresa para a sociedade.
 No caso da Eletrobrás, a extração de dados do Twitter pode ser uma ferramenta de apoio importante permitindo que a empresa compreenda melhor a opinião pública sobre a sua atuação no setor de energia e avalie a efetividade de suas estratégias de comunicação, além de se manter atualizada sobre as tendências do setor de energia.
+
 A Interface de Programação de Aplicação (API) do Twitter é um conjunto de ferramentas e interfaces de programação que permitem que desenvolvedores criem aplicativos que se integram com a plataforma do Twitter. Ao longo do tempo, a API do Twitter passou por várias mudanças de contexto que afetaram os recursos disponíveis para os desenvolvedores e a forma como esses recursos podem ser acessados.
 
 
